@@ -21,7 +21,7 @@ class ShowsPresenter: ShowsPresenterProtocol {
     }
 
     func actualize(Shows shows: [Show]) {
-        if page == 1 {
+        if page < 2 {
             self.shows = shows
         } else {
             self.shows.append(contentsOf: shows)
@@ -54,12 +54,13 @@ class ShowsPresenter: ShowsPresenterProtocol {
     }
 
     func willDisplayCellAt(IndexPath indexPath: IndexPath) {
-        if indexPath.row == shows.count - 10 {
+        if indexPath.row == shows.count - 1 && page != 0 {
             getShows()
         }
     }
 
     private func search(query: String) {
+        page = 0
         interactor?.searchShow(query: query)
     }
 }
