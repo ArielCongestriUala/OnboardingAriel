@@ -10,4 +10,5 @@ import Foundation
 
 class APIConstants {
     static var baseURL = "http://api.tvmaze.com/"
+
 }

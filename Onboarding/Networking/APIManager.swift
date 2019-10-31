@@ -27,4 +27,24 @@ class APIManager {
             }
         }
     }
+
+    class func search(Request theRequest: RequestBuilder) -> Promise<[Show]> {
+        return Promise<[Show]> { seal in
+            request(theRequest).responseJSON { (response) in
+                var showArray = [Show]()
+                guard let data = response.data else { seal.fulfill(showArray); return}
+                do {
+                    let decoder = JSONDecoder()
+                    let responseArray = try decoder.decode([SearchResponse].self, from: data)
+                    responseArray.forEach { (response) in
+                        showArray.append(response.show)
+                    }
+                    seal.fulfill(showArray)
+                } catch {
+                    seal.reject(error)
+                }
+            }
+        }
+    }
+
 }

@@ -32,11 +32,14 @@ class OnboardingTests: XCTestCase {
     }
 
     func testShowCellConfiguration() {
-        let show = Show(id: 1, name: "ABCD", summary: nil, rating: Rating(average: 10.0), imageURL: ImageURL(original: "original", medium: "medium"))
+        var show = Show(id: 1, name: "ABCD", summary: nil, rating: Rating(average: 10.0), imageURL: ImageURL(original: "original", medium: "medium"))
         let configuration = ShowCellConfiguration(from: show)
         XCTAssertEqual(configuration.name, show.name)
         XCTAssertEqual(configuration.rating, "10.0")
         XCTAssertEqual(configuration.image, show.image?.medium)
+        
+        show.rating?.average = nil
+        XCTAssertEqual(configuration.rating, "0.0")
 
         let collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), collectionViewLayout: UICollectionViewLayout())
         collectionView.register(UINib(nibName: "ShowCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ShowCell")
