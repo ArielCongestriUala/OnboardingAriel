@@ -3,11 +3,7 @@ import Foundation
 class ShowsPresenter: ShowsPresenterProtocol {
 
     weak var view: ShowsViewProtocol?
-    var interactor: ShowsInteractorProtocol? {
-        didSet {
-            getShows()
-        }
-    }
+    var interactor: ShowsInteractorProtocol?
     var router: ShowsRouterProtocol?
     var shows: [Show] = []
     var numberOfItems: Int {

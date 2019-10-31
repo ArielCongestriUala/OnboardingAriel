@@ -12,6 +12,7 @@ class ShowsView: UIViewController, ShowsViewProtocol {
     //MARK:- Life cicle
 	override func viewDidLoad() {
         super.viewDidLoad()
+        presenter?.getShows()
         collectionView.register(UINib(nibName: "ShowCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ShowCell")
     }
 }
