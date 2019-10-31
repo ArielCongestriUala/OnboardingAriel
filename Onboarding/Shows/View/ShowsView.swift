@@ -13,6 +13,7 @@ class ShowsView: UIViewController, ShowsViewProtocol {
 	override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.getShows()
+        searchBar.delegate = self
         collectionView.register(UINib(nibName: "ShowCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ShowCell")
     }
 }
@@ -32,10 +33,20 @@ extension ShowsView: UICollectionViewDelegate, UICollectionViewDataSource, UICol
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: UIScreen.main.bounds.size.width, height: 70)
+        return CGSize(width: UIScreen.main.bounds.size.width, height: 100)
     }
-    
+
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        presenter?.willDisplayCellAt(IndexPath: indexPath)
+    }
 }
 extension ShowsView: UISearchBarDelegate {
-    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        presenter?.searchBarTextDidChange(To: searchText)
+    }
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        presenter?.userDidTapSearch(Text: searchBar.text)
+        self.searchBar.endEditing(true)
+    }
 }

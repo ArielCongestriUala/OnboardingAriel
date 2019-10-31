@@ -1,7 +1,7 @@
 import Foundation
 
 protocol ShowsRouterProtocol: class {
-    func navigateToDetail()
+    func navigateToDetail(show: Show)
 }
 
 protocol ShowsPresenterProtocol: class {
@@ -11,12 +11,16 @@ protocol ShowsPresenterProtocol: class {
     func getShows()
     func actualize(Shows shows: [Show])
     func objectForCellAt(IndexPath indexPath: IndexPath) -> Any
+    func searchBarTextDidChange(To text: String)
+    func userDidTapSearch(Text text: String?)
+    func willDisplayCellAt(IndexPath indexPath: IndexPath)
 }
 
 
 protocol ShowsInteractorProtocol: class {
     var presenter: ShowsPresenterProtocol?  { get set }
     func getShows(page: Int)
+    func searchShow(query: String)
 }
 
 

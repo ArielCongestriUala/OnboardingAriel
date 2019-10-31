@@ -17,7 +17,7 @@ struct ShowCellConfiguration {
     init(from show: Show) {
         name = show.name
         image = show.image?.medium
-        let average = show.rating?.average ?? 0.0
+        guard let average = show.rating?.average else { return }
         rating = "\(average)"
     }
 }
