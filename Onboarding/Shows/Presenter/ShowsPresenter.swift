@@ -12,7 +12,7 @@ class ShowsPresenter: ShowsPresenterProtocol {
     private var page = 0
     
     func selectedItemAt(IndexPath indexPath: IndexPath) {
-        router?.navigateToDetail()
+        router?.navigateToDetail(show: shows[indexPath.row])
     }
 
     func getShows() {

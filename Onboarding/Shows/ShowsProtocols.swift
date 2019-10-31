@@ -1,7 +1,7 @@
 import Foundation
 
 protocol ShowsRouterProtocol: class {
-    func navigateToDetail()
+    func navigateToDetail(show: Show)
 }
 
 protocol ShowsPresenterProtocol: class {

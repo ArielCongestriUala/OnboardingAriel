@@ -12,7 +12,7 @@ import PromiseKit
 
 class APIManager {
     
-    class func executeArray<T: Decodable>(Request theRequest: RequestBuilder) -> Promise<[T]> {
+    class func executeArray<T: Decodable>(Request theRequest: RequestBuilder, type: T.Type) -> Promise<[T]> {
         return Promise<[T]> { seal in
             request(theRequest).responseJSON { (response) in
                 var codableArray = [T]()
@@ -46,5 +46,4 @@ class APIManager {
             }
         }
     }
-
 }

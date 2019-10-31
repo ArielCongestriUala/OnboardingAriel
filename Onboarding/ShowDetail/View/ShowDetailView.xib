@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ShowDetailViewController" customModule="Onboarding" customModuleProvider="target">
+            <connections>
+                <outlet property="sumary" destination="GNb-iD-liF" id="KHs-YR-fy9"/>
+                <outlet property="tableView" destination="nyC-O2-QFQ" id="Yj4-ul-Kpf"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="GNb-iD-liF">
+                    <rect key="frame" x="10" y="10" width="355" height="19.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nyC-O2-QFQ">
+                    <rect key="frame" x="0.0" y="39.5" width="375" height="627.5"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="tjy-w6-hyg"/>
+                        <outlet property="delegate" destination="-1" id="pIG-TQ-Xr6"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="GNb-iD-liF" firstAttribute="leading" secondItem="vq8-9Y-lqb" secondAttribute="leading" constant="10" id="B4r-hG-K5n"/>
+                <constraint firstItem="nyC-O2-QFQ" firstAttribute="leading" secondItem="vq8-9Y-lqb" secondAttribute="leading" id="Pnb-BI-aIL"/>
+                <constraint firstItem="vq8-9Y-lqb" firstAttribute="trailing" secondItem="nyC-O2-QFQ" secondAttribute="trailing" id="Xw9-h6-9q4"/>
+                <constraint firstItem="vq8-9Y-lqb" firstAttribute="bottom" secondItem="nyC-O2-QFQ" secondAttribute="bottom" id="bD7-Z4-S30"/>
+                <constraint firstItem="GNb-iD-liF" firstAttribute="top" secondItem="vq8-9Y-lqb" secondAttribute="top" constant="10" id="c0C-7c-4DD"/>
+                <constraint firstItem="vq8-9Y-lqb" firstAttribute="trailing" secondItem="GNb-iD-liF" secondAttribute="trailing" constant="10" id="hJw-8S-YvB"/>
+                <constraint firstItem="nyC-O2-QFQ" firstAttribute="top" secondItem="GNb-iD-liF" secondAttribute="bottom" constant="10" id="wHz-Ih-5SK"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vq8-9Y-lqb"/>
+            <point key="canvasLocation" x="138" y="154"/>
+        </view>
+    </objects>
+</document>
