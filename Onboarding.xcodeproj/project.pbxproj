@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1AB3647B7811EE6AF144578B /* Pods_OnboardingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BBD569A01A7F2BA1C390303 /* Pods_OnboardingTests.framework */; };
+		B013F699236B29470096E97F /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B013F698236B29470096E97F /* SearchResponse.swift */; };
 		B06618862368AF5400E5CB19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06618852368AF5400E5CB19 /* AppDelegate.swift */; };
 		B066188F2368AF5500E5CB19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B066188E2368AF5500E5CB19 /* Assets.xcassets */; };
 		B06618922368AF5500E5CB19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B06618902368AF5500E5CB19 /* LaunchScreen.storyboard */; };
@@ -49,6 +50,7 @@
 		4BBD569A01A7F2BA1C390303 /* Pods_OnboardingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OnboardingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70CFDF2C9B05D90A9F086284 /* Pods-OnboardingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnboardingTests.release.xcconfig"; path = "Target Support Files/Pods-OnboardingTests/Pods-OnboardingTests.release.xcconfig"; sourceTree = "<group>"; };
 		78BB9199F546511E39C9D822 /* Pods-Onboarding.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Onboarding.debug.xcconfig"; path = "Target Support Files/Pods-Onboarding/Pods-Onboarding.debug.xcconfig"; sourceTree = "<group>"; };
+		B013F698236B29470096E97F /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
 		B06618822368AF5400E5CB19 /* Onboarding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Onboarding.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B06618852368AF5400E5CB19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B066188E2368AF5500E5CB19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 				B06618CD2369C3D500E5CB19 /* Show.swift */,
 				B06618CF2369C72900E5CB19 /* Rating.swift */,
 				B06618D12369C84F00E5CB19 /* ImageURL.swift */,
+				B013F698236B29470096E97F /* SearchResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 				B06618D22369C84F00E5CB19 /* ImageURL.swift in Sources */,
 				B06619082369D78F00E5CB19 /* APIConstans.swift in Sources */,
 				B066190A2369D94C00E5CB19 /* RequestBuilder.swift in Sources */,
+				B013F699236B29470096E97F /* SearchResponse.swift in Sources */,
 				B06618C92368DBDB00E5CB19 /* ShowsRepository.swift in Sources */,
 				B06618862368AF5400E5CB19 /* AppDelegate.swift in Sources */,
 				B06618C12368AFDE00E5CB19 /* ShowsInteractor.swift in Sources */,

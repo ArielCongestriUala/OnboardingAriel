@@ -10,19 +10,23 @@ import Foundation
 import Alamofire
 
 enum RequestBuilder: URLRequestConvertible {
-    case getShows(Int)
+    case getShows(Int), searchShow(String)
 
     var path: String {
         switch self {
         case .getShows(_):
             return "shows"
+        case .searchShow(_):
+            return "search/shows"
         }
     }
 
     var parameters: [String : Any]? {
         switch self {
         case .getShows(let page):
-            return ["page": page]
+            return ["page" : page]
+        case .searchShow(let query):
+            return ["q" : query]
         }
     }
 

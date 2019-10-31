@@ -21,11 +21,45 @@ class ShowsPresenter: ShowsPresenterProtocol {
     }
 
     func actualize(Shows shows: [Show]) {
-        self.shows = shows
+        if page == 1 {
+            self.shows = shows
+        } else {
+            self.shows.append(contentsOf: shows)
+        }
         view?.reloadData()
     }
 
     func objectForCellAt(IndexPath indexPath: IndexPath) -> Any {
         return ShowCellConfiguration(from: shows[indexPath.row])
+    }
+
+    func searchBarTextDidChange(To text: String) {
+        if text == "" {
+            page = 0
+            getShows()
+            return
+        }
+        if text.count % 2 == 0 {
+            search(query: text)
+        }
+    }
+    
+    func userDidTapSearch(Text text: String?) {
+        guard let text = text , text != "" else {
+            page = 0
+            getShows()
+            return
+        }
+        search(query: text)
+    }
+
+    func willDisplayCellAt(IndexPath indexPath: IndexPath) {
+        if indexPath.row == shows.count - 10 {
+            getShows()
+        }
+    }
+
+    private func search(query: String) {
+        interactor?.searchShow(query: query)
     }
 }

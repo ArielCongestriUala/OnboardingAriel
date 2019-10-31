@@ -15,4 +15,10 @@ class ShowsRepository {
             completion(shows)
         }
     }
+
+    class func searchShow(query: String, completion:  @escaping (([Show])-> Void)) {
+        APIManager.search(Request: RequestBuilder.searchShow(query)).done { (shows) in
+            completion(shows)
+        }
+    }
 }

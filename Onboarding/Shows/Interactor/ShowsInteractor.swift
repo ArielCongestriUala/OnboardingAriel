@@ -11,4 +11,10 @@ class ShowsInteractor: ShowsInteractorProtocol {
         }
     }
 
+    func searchShow(query: String) {
+        ShowsRepository.searchShow(query: query) { [weak self] (shows) in
+            self?.presenter?.actualize(Shows: shows)
+        }
+    }
+
 }
