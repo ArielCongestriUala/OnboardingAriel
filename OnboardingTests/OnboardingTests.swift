@@ -74,4 +74,17 @@ class OnboardingTests: XCTestCase {
         let showDetailPresenter = ShowDetailPresenter(show: show)
         XCTAssertTrue(showDetailPresenter.show != nil)
     }
+
+    func testPersonCellConfiguration() {
+        let person = Person(id: 0, name: "name", imageURL: ImageURL(original: "", medium: "URL"))
+        let configuration = PersonCellConfiguration(person: person)
+        XCTAssertEqual(configuration.name, person.name)
+        XCTAssertEqual(configuration.image, person.image?.medium)
+
+        let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), style: .plain)
+        tableView.register(UINib(nibName: "PersonCell", bundle: nil), forCellReuseIdentifier: "PersonCell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PersonCell", for: IndexPath(row: 0, section: 0)) as? PersonCell
+        cell?.configure(with: configuration)
+        XCTAssertEqual(configuration.name, cell?.name.text)
+    }
 }
