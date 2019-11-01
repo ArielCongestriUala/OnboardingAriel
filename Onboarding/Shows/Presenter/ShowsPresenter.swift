@@ -59,6 +59,10 @@ class ShowsPresenter: ShowsPresenterProtocol {
         }
     }
 
+    func userDidTouchUpInsideSearchPeople() {
+        router?.navigateToSearchPeople()
+    }
+
     private func search(query: String) {
         page = 0
         interactor?.searchShow(query: query)

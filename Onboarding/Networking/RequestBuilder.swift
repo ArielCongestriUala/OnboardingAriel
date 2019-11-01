@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 enum RequestBuilder: URLRequestConvertible {
-    case getShows(Int), searchShow(String), getEpisodes(Int)
+    case getShows(Int), searchShow(String), getEpisodes(Int), shearchPeople(String), getPeopleDetail(Int)
 
     var path: String {
         switch self {
@@ -20,6 +20,10 @@ enum RequestBuilder: URLRequestConvertible {
             return "search/shows"
         case .getEpisodes(let id):
             return "shows/\(id)/episodes"
+        case .shearchPeople(_):
+            return "search/people"
+        case .getPeopleDetail(let id):
+            return "people/\(id)/crewcredits"
         }
     }
 
@@ -31,6 +35,10 @@ enum RequestBuilder: URLRequestConvertible {
             return ["q" : query]
         case .getEpisodes(_):
             return nil
+        case .shearchPeople(let query):
+            return ["q" : query]
+        case .getPeopleDetail(_):
+            return ["embebed" : "show"]
         }
     }
 

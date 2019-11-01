@@ -1,6 +1,7 @@
 import UIKit
 
 class ShowsView: UIViewController, ShowsViewProtocol {
+    
     //MARK:- Presenter implementation
 	var presenter: ShowsPresenterProtocol?
     func reloadData() {
@@ -15,6 +16,10 @@ class ShowsView: UIViewController, ShowsViewProtocol {
         presenter?.getShows()
         searchBar.delegate = self
         collectionView.register(UINib(nibName: "ShowCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ShowCell")
+    }
+
+    @IBAction func searchPeopleDidTouchUpInside(_ sender: Any) {
+        presenter?.userDidTouchUpInsideSearchPeople()
     }
 }
 extension ShowsView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {

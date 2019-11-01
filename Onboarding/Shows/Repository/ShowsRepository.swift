@@ -10,10 +10,8 @@ import Foundation
 import PromiseKit
 
 class ShowsRepository {
-    class func getSwhows(page: Int, completion:  @escaping (([Show])-> Void) ){
-        APIManager.executeArray(Request: RequestBuilder.getShows(page), type: Show.self).done { (shows: [Show]) in
-            completion(shows)
-        }
+    class func getSwhows(page: Int) -> Promise<[Show]> {
+        return APIManager.executeArray(Request: RequestBuilder.getShows(page), type: Show.self)
     }
 
     class func searchShow(query: String, completion:  @escaping (([Show])-> Void)) {

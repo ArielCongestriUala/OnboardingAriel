@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchPeopleViewController" customModule="Onboarding" customModuleProvider="target">
+            <connections>
+                <outlet property="searchBar" destination="cYE-U8-zys" id="DJr-wN-r8N"/>
+                <outlet property="tableView" destination="Btt-k1-EdD" id="dl8-UL-c1N"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="cYE-U8-zys">
+                    <rect key="frame" x="0.0" y="10" width="375" height="56"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="EbA-pb-fht"/>
+                    </connections>
+                </searchBar>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Btt-k1-EdD">
+                    <rect key="frame" x="0.0" y="66" width="375" height="601"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="mxi-vz-reP"/>
+                        <outlet property="delegate" destination="-1" id="3Be-0Q-bBj"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="cYE-U8-zys" firstAttribute="leading" secondItem="Dgk-bW-9gx" secondAttribute="leading" id="C28-3j-XTC"/>
+                <constraint firstItem="Dgk-bW-9gx" firstAttribute="bottom" secondItem="Btt-k1-EdD" secondAttribute="bottom" id="CXn-gn-B7B"/>
+                <constraint firstItem="Dgk-bW-9gx" firstAttribute="trailing" secondItem="Btt-k1-EdD" secondAttribute="trailing" id="Dx6-JJ-ZDd"/>
+                <constraint firstItem="cYE-U8-zys" firstAttribute="top" secondItem="Dgk-bW-9gx" secondAttribute="top" constant="10" id="G5U-mo-A1M"/>
+                <constraint firstItem="cYE-U8-zys" firstAttribute="trailing" secondItem="Dgk-bW-9gx" secondAttribute="trailing" id="MYS-uw-Evg"/>
+                <constraint firstItem="Btt-k1-EdD" firstAttribute="top" secondItem="cYE-U8-zys" secondAttribute="bottom" id="v6R-eL-DEc"/>
+                <constraint firstItem="Btt-k1-EdD" firstAttribute="leading" secondItem="Dgk-bW-9gx" secondAttribute="leading" id="woQ-SH-dgq"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Dgk-bW-9gx"/>
+            <point key="canvasLocation" x="138" y="155"/>
+        </view>
+    </objects>
+</document>

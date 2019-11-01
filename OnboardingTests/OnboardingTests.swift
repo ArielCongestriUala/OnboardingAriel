@@ -69,7 +69,7 @@ class OnboardingTests: XCTestCase {
         
     }
 
-    func testShowDetailPresente() {
+    func testShowDetailPresenter() {
         let show = Show(id: 1, name: "ABCD", summary: nil, rating: Rating(average: 10.0), imageURL: ImageURL(original: "original", medium: "medium"))
         let showDetailPresenter = ShowDetailPresenter(show: show)
         XCTAssertTrue(showDetailPresenter.show != nil)

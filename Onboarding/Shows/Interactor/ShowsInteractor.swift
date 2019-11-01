@@ -6,8 +6,8 @@ class ShowsInteractor: ShowsInteractorProtocol {
     weak var presenter: ShowsPresenterProtocol?
 
     func getShows(page: Int) {
-        ShowsRepository.getSwhows(page: page) { [weak self] (shows) in
-            self?.presenter?.actualize(Shows: shows)
+        ShowsRepository.getSwhows(page: page).done { [weak self] (show) in
+            self?.presenter?.actualize(Shows: show)
         }
     }
 

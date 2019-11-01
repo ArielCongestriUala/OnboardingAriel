@@ -2,6 +2,7 @@ import Foundation
 
 protocol ShowsRouterProtocol: class {
     func navigateToDetail(show: Show)
+    func navigateToSearchPeople()
 }
 
 protocol ShowsPresenterProtocol: class {
@@ -14,6 +15,7 @@ protocol ShowsPresenterProtocol: class {
     func searchBarTextDidChange(To text: String)
     func userDidTapSearch(Text text: String?)
     func willDisplayCellAt(IndexPath indexPath: IndexPath)
+    func userDidTouchUpInsideSearchPeople()
 }
 
 
